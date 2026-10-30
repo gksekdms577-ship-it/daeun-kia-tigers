@@ -64,9 +64,11 @@ def pitchers(obj):
     return result
 
 def preview_team(raw, meta_idx, lineup_idx):
-    meta=(raw.get(str(meta_idx)) or [{}])[0] or {}
+    meta_entries=raw.get(str(meta_idx)) or [{}]
+    meta=(meta_entries[0] if isinstance(meta_entries,list) and meta_entries else {}) or {}
+    if not isinstance(meta,dict):meta={}
     entries=raw.get(str(lineup_idx)) or []
-    table=entries[0] if entries else ''
+    table=entries[0] if isinstance(entries,list) and entries else ''
     players=[]
     for line in rows(table):
         if len(line)<3 or not line[0].isdigit() or not line[2]:continue
@@ -77,10 +79,12 @@ def preview_team(raw, meta_idx, lineup_idx):
 
 def fetch_preview(pk, form, kia_away, today):
     raw=get_json(PREVIEW,form)
-    # The KBO service sometimes returns a list rather than the expected
-    # numbered dictionary. Do not call .get on a list; log it for diagnosis.
-    if not isinstance(raw, dict):
-        print('LINEUP unexpected response:', type(raw).__name__, repr(raw)[:1200])
+    # KBO returns numbered sections either as a dictionary ('0', '1', ...)
+    # or a positional list. Convert the latter instead of discarding it.
+    if isinstance(raw, list):
+        raw = {str(i): section for i, section in enumerate(raw)}
+    elif not isinstance(raw, dict):
+        print('LINEUP unexpected response:', pk, type(raw).__name__)
         return None
     if raw.get('code') == '200' or not isinstance(raw.get('0'), list) or not raw['0']:
         print('LINEUP response missing fields:', pk, repr(raw)[:500])
@@ -88,7 +92,7 @@ def fetch_preview(pk, form, kia_away, today):
     if not isinstance(raw['0'][0], dict):
         print('LINEUP metadata unavailable:', pk, repr(raw['0'][0])[:500])
         return None
-    flag=bool(raw['0'][0].get('LINEUP_CK'))
+    flag=str(raw['0'][0].get('LINEUP_CK', '')).strip().lower() in ('1', 'true', 'y', 'yes')
     if not flag:return None # Never label a last-game projected lineup as today's starters.
     home=preview_team(raw,1,3)
     away=preview_team(raw,2,4)
