@@ -69,7 +69,11 @@ def preview_team(raw, meta_idx, lineup_idx):
     table=entries[0] if entries else ''
     players=[]
     for line in rows(table):
-        if len(line)<3 or not line[0].isdigit() or not line[2]:continue
+        if not isinstance(raw, dict):
+    print('LINEUP unexpected response:', type(raw).__name__, repr(raw)[:1000])
+    return None
+if raw.get('code') == '200' or not isinstance(raw.get('0'), list):
+    return Noneif len(line)<3 or not line[0].isdigit() or not line[2]:continue
         player={'order':line[0],'position':line[1],'name':line[2]}
         if len(line)>3 and line[3]:player['war']=line[3]
         players.append(player)
