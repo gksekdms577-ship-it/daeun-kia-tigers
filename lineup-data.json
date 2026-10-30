@@ -4714,5 +4714,159 @@
     "source": "KBO Game Center box score",
     "lineupStatus": "postgame",
     "updated": "2026-10-30"
+  },
+  "20261030SSHT0": {
+    "kia": {
+      "teamId": "HT",
+      "hitters": [
+        {
+          "order": "1",
+          "position": "좌익수",
+          "name": "박재현",
+          "war": "2.79",
+          "avg": "0.293",
+          "games": "132",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "2",
+          "position": "3루수",
+          "name": "김도영",
+          "war": "7.20",
+          "avg": "0.308",
+          "games": "135",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "3",
+          "position": "1루수",
+          "name": "카스트로",
+          "war": "3.90",
+          "avg": "0.327",
+          "games": "99",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "4",
+          "position": "우익수",
+          "name": "나성범",
+          "war": "5.02",
+          "avg": "0.303",
+          "games": "140",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "5",
+          "position": "2루수",
+          "name": "김선빈",
+          "war": "2.73",
+          "avg": "0.285",
+          "games": "137",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "6",
+          "position": "지명타자",
+          "name": "한준수",
+          "war": "2.28",
+          "avg": "0.281",
+          "games": "115",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "7",
+          "position": "유격수",
+          "name": "하주석",
+          "war": "0.36",
+          "avg": "0.249",
+          "games": "71",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "8",
+          "position": "포수",
+          "name": "김태군",
+          "war": "0.81",
+          "avg": "0.252",
+          "games": "88",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "9",
+          "position": "중견수",
+          "name": "박정우",
+          "war": "0.46",
+          "avg": "0.292",
+          "games": "110",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        }
+      ],
+      "pitchers": []
+    },
+    "opponent": {
+      "teamId": "SS",
+      "hitters": [
+        {
+          "order": "1",
+          "position": "중견수",
+          "name": "김지찬",
+          "war": "3.38"
+        },
+        {
+          "order": "2",
+          "position": "우익수",
+          "name": "박승규",
+          "war": "2.16"
+        },
+        {
+          "order": "3",
+          "position": "지명타자",
+          "name": "구자욱",
+          "war": "6.14"
+        },
+        {
+          "order": "4",
+          "position": "1루수",
+          "name": "디아즈",
+          "war": "4.17"
+        },
+        {
+          "order": "5",
+          "position": "좌익수",
+          "name": "최형우",
+          "war": "3.12"
+        },
+        {
+          "order": "6",
+          "position": "3루수",
+          "name": "김영웅",
+          "war": "-1.35"
+        },
+        {
+          "order": "7",
+          "position": "포수",
+          "name": "강민호",
+          "war": "2.04"
+        },
+        {
+          "order": "8",
+          "position": "2루수",
+          "name": "류지혁",
+          "war": "2.65"
+        },
+        {
+          "order": "9",
+          "position": "유격수",
+          "name": "이재현",
+          "war": "1.45"
+        }
+      ],
+      "pitchers": []
+    },
+    "source": "KBO Game Center GetLineUpAnalysis",
+    "lineupStatus": "confirmed",
+    "updated": "2026-10-30",
+    "avgLabel": "발표된 라인업(타율은 별도 제공되지 않음)",
+    "pitcherLabel": "선발투수 및 투수기록은 별도 제공되지 않음"
   }
 }
