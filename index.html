@@ -26,8 +26,8 @@
 </section>
 
 <section class="card" id="game-section" aria-labelledby="game-title">
-<div class="game-head"><h2 id="game-title">⚾ KIA 경기별 선발 라인업</h2><span class="rank-badge">홈에서 바로 확인</span></div>
-<p class="muted">최근 KIA 경기의 공식 박스스코어를 자동 갱신해요. 타자별 이름·타순·타율, 투수별 경기 실점·자책점·ERA를 한 화면에서 확인할 수 있어요.</p>
+<div class="game-head"><h2 id="game-title">⚾ 오늘 경기 · 선발 라인업</h2><span class="rank-badge">홈에서 바로 확인</span></div>
+<p class="muted">오늘 경기와 포스트시즌을 먼저 보여주고 공식 기록을 자동 갱신해요. 타자별 이름·타순·타율, 투수별 경기 실점·자책점·ERA를 한 화면에서 확인할 수 있어요.</p>
 <div id="kia-game-list" class="game-list" aria-live="polite"><div class="loading-dots">KIA 경기 정보를 확인하고 있어요…</div></div>
 <p class="stats-legend">타율/등판/ERA: 연결된 KBO 시즌 기록 우선 · 실점/자책: 해당 경기 박스스코어 · —: 정보 미제공</p>
 <div class="tiny-notice">📌 KBO 게임센터 박스스코어 기반으로 경기 종료 후 기록을 수집해요. 표시 타율은 해당 경기 박스스코어 값이며, 시즌 기록실 조회에 성공한 선수는 타율·등판 수·ERA를 추가로 표시해요. 좌/우타·좌/우투·OPS·선발 등판 수는 아직 확인된 데이터가 없으면 ‘—’로 표시해요. 경기 전 선발 명단은 제공되지 않을 수 있어요.</div>
@@ -85,7 +85,7 @@
 /* 경기별 상세화면: 날짜/상대/점수는 공개 경기 데이터, 선수 상세는 별도의 lineup-data.json이 있을 때 표시 */
 (async function(){
   const wrap=document.getElementById('kia-game-list');
-  const scheduleUrl='https://raw.githubusercontent.com/dentearl/kbo-data/main/data/kbo/2026.json';
+  const scheduleUrl='./schedule-data.json';
   let details={};
   try {const r=await fetch('./lineup-data.json?t='+Math.floor(Date.now()/300000),{cache:'no-store'});if(r.ok){const j=await r.json();if(j&&typeof j==='object'&&!Array.isArray(j))details=j;}}catch(e){}
   const str=v=>String(v??'');
@@ -112,8 +112,8 @@
     const r=await fetch(scheduleUrl+'?t='+Math.floor(Date.now()/1800000),{cache:'no-store'});if(!r.ok)throw Error('응답 오류');
     const games=await r.json();if(!Array.isArray(games))throw Error('경기 목록 형식 오류');
     const rows=games.filter(g=>{const a=g.teams?.away?.team||{},h=g.teams?.home?.team||{};return isKia(a.abbrev||a.name)||isKia(h.abbrev||h.name);})
-     .filter(g=>String(g.officialDate||g.gameDate||'').slice(0,10)<=new Date(Date.now()+9*3600000).toISOString().slice(0,10))
-     .sort((a,b)=>String(b.officialDate||b.gameDate||'').localeCompare(String(a.officialDate||a.gameDate||'')))
+     .filter(g=>String(g.officialDate||g.gameDate||'').slice(0,10)<=new Date(Date.now()+9*3600000+7*86400000).toISOString().slice(0,10))
+     .sort((a,b)=>{const today=new Date(Date.now()+9*3600000).toISOString().slice(0,10);const da=String(a.officialDate||a.gameDate||'').slice(0,10),db=String(b.officialDate||b.gameDate||'').slice(0,10);const rank=d=>d===today?0:d>today?1:2;return rank(da)-rank(db)||(rank(da)===2?db.localeCompare(da):da.localeCompare(db));})
      .slice(0,5);
     if(!rows.length){wrap.innerHTML='<p class="game-empty">표시할 KIA 경기 정보가 없어요. 데이터 업데이트를 확인해 주세요.</p>';return;}
     wrap.innerHTML=rows.map(g=>{
@@ -127,9 +127,9 @@
       const lineupNote=d.lineupStatus==='confirmed'?'✅ 당일 확정 선발 라인업':d.lineupStatus==='postgame'?'📊 경기 종료 기록':'⏳ 선발 라인업 발표 전 · 아직 자료 없음';
       const kia=d.kia||d[k]||{};
       const opp=d.opponent||d[k==='home'?'away':'home']||{};
-      return '<article class="game-box"><div class="game-title"><div><small>'+safe(dt)+' · '+safe(g.status?.detailedState||'경기 기록')+'</small><br><strong>'+safe(away)+' vs '+safe(home)+'</strong></div><div class="game-score">'+safe(score)+'</div></div><div class="game-content"><div class="stat-head"><h3>🐯 KIA 타이거즈</h3><span class="subtle-tag">경기별 기록</span></div>'+table(kia)+'<div class="stat-head"><h3>🆚 상대팀 기록</h3></div>'+table(opp)+'</div></article>';
+      return '<article class="game-box"><div class="game-title"><div><small>'+safe(dt)+' · '+safe(g.series||'')+' · '+safe(g.time||'')+' · '+safe(g.status?.detailedState||'경기 기록')+'</small><br><strong>'+safe(away)+' vs '+safe(home)+'</strong></div><div class="game-score">'+safe(score)+'</div></div><div class="game-content"><div class="stat-head"><h3>🐯 KIA 타이거즈</h3><span class="subtle-tag">경기별 기록</span></div>'+table(kia)+'<div class="stat-head"><h3>🆚 상대팀 기록</h3></div>'+table(opp)+'</div></article>';
     }).join('');
-  }catch(e){wrap.innerHTML='<p class="game-empty">현재 경기 데이터를 불러오지 못했어요. 네트워크 연결을 확인하거나 다시 접속해 주세요.</p>';}
+  }catch(e){wrap.innerHTML='<p class="game-empty">경기 일정이 아직 갱신되지 않았어요. 새로고침하거나 자동 갱신 실행 결과를 확인해 주세요.</p>';}
 })();
 </script>
 </body></html>
