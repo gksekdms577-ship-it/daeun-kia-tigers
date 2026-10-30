@@ -69,11 +69,7 @@ def preview_team(raw, meta_idx, lineup_idx):
     table=entries[0] if entries else ''
     players=[]
     for line in rows(table):
-        if not isinstance(raw, dict):
-    print('LINEUP unexpected response:', type(raw).__name__, repr(raw)[:1000])
-    return None
-if raw.get('code') == '200' or not isinstance(raw.get('0'), list):
-    return Noneif len(line)<3 or not line[0].isdigit() or not line[2]:continue
+        if len(line)<3 or not line[0].isdigit() or not line[2]:continue
         player={'order':line[0],'position':line[1],'name':line[2]}
         if len(line)>3 and line[3]:player['war']=line[3]
         players.append(player)
@@ -81,8 +77,18 @@ if raw.get('code') == '200' or not isinstance(raw.get('0'), list):
 
 def fetch_preview(pk, form, kia_away, today):
     raw=get_json(PREVIEW,form)
-    if raw.get('code')=='200' or not isinstance(raw.get('0'),list):return None
-    flag=bool((raw['0'][0] or {}).get('LINEUP_CK'))
+    # The KBO service sometimes returns a list rather than the expected
+    # numbered dictionary. Do not call .get on a list; log it for diagnosis.
+    if not isinstance(raw, dict):
+        print('LINEUP unexpected response:', type(raw).__name__, repr(raw)[:1200])
+        return None
+    if raw.get('code') == '200' or not isinstance(raw.get('0'), list) or not raw['0']:
+        print('LINEUP response missing fields:', pk, repr(raw)[:500])
+        return None
+    if not isinstance(raw['0'][0], dict):
+        print('LINEUP metadata unavailable:', pk, repr(raw['0'][0])[:500])
+        return None
+    flag=bool(raw['0'][0].get('LINEUP_CK'))
     if not flag:return None # Never label a last-game projected lineup as today's starters.
     home=preview_team(raw,1,3)
     away=preview_team(raw,2,4)
@@ -298,6 +304,9 @@ def main():
                     enrich_team(record['kia'],hit,pit);previous[pk]=record;updated+=1
                 continue
             data=get_json(BOX,form)
+            if not isinstance(data, dict):
+                print('BOX unexpected response:', pk, type(data).__name__, repr(data)[:600])
+                continue
             hh=data.get('arrHitter',[]);pp=data.get('arrPitcher',[])
             if len(hh)<2 and len(pp)<2:continue
             away={'hitters':hitters(hh[0]) if hh else [],'pitchers':pitchers(pp[0]) if pp else []}
