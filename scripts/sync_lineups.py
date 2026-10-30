@@ -196,63 +196,116 @@ def enrich_team(team,hitters_by_name,pitchers_by_name):
 
 def has_content(team):return bool(team['hitters'] or team['pitchers'])
 
+# KBO 일별 공식 경기 목록: 정규·시범·포스트시즌 모두 포함.
+DAILY = 'https://www.koreabaseball.com/ws/Main.asmx/GetKboGameList'
+KST = dt.timezone(dt.timedelta(hours=9))
+
+def schedule_for_day(day):
+    form = {'leId':1,'srId':'0,1,3,4,5,6,7,8,9','date':day.strftime('%Y%m%d')}
+    payload = get_json(DAILY,form)
+    return payload.get('game',[]) if isinstance(payload,dict) else []
+
+def kia_game(g):
+    ids = [str(g.get(k,'' )).upper() for k in ('AWAY_ID','HOME_ID')]
+    names = [str(g.get(k,'')) for k in ('AWAY_NM','HOME_NM')]
+    return any(x in ('HT','KIA') for x in ids) or any('KIA' in x.upper() or '기아' in x for x in names)
+
+def readable(g):
+    pk = str(g.get('G_ID',''))
+    if len(pk)<13:return None
+    day=pk[:8]
+    def team(side):
+        code=str(g.get(side+'_ID','')).upper()
+        name=str(g.get(side+'_NM',''))
+        if code in ('HT','KIA'):return {'abbrev':'KIA','name':'KIA 타이거즈'}
+        return {'abbrev':code,'name':name or code}
+    def score(k):
+        v=g.get(k)
+        try:return int(v) if v not in (None,'','-') else None
+        except (ValueError,TypeError):return None
+    a={'team':team('AWAY'),'score':score('T_SCORE_CN')}
+    h={'team':team('HOME'),'score':score('B_SCORE_CN')}
+    finished=str(g.get('GAME_RESULT_CK','')).lower() in ('1','true','y')
+    cancel=str(g.get('CANCEL_SC_ID','0')) not in ('0','', 'None')
+    return {'gamePk':pk,'officialDate':f'{day[:4]}-{day[4:6]}-{day[6:]}',
+        'teams':{'away':a,'home':h},
+        'status':{'abstractGameState':'F' if finished else 'P',
+                  'detailedState':str(g.get('CANCEL_SC_NM') or ('종료' if finished else '경기 예정'))},
+        'series':str(g.get('SR_NM') or ''),'srId':int(g.get('SR_ID') or 0),
+        'time':str(g.get('G_TM') or ''),'venue':str(g.get('S_NM') or ''),
+        'cancelled':cancel,'awayStarter':str(g.get('T_PIT_P_NM') or ''),
+        'homeStarter':str(g.get('B_PIT_P_NM') or '')}
+
 def main():
-    saved={}
+    today=dt.datetime.now(KST).date()
+    previous={}
     if TARGET.exists():
-        try:saved=json.loads(TARGET.read_text(encoding='utf-8'))
-        except (ValueError,OSError):saved={}
-    games=get_json(SCHEDULE)
-    today=(dt.datetime.now(dt.timezone(dt.timedelta(hours=9)))).date().isoformat()
-    selected=[g for g in games if g.get('officialDate','')<=today
-              and any(g.get('teams',{}).get(side,{}).get('team',{}).get('abbrev')=='KIA' for side in ('away','home'))]
-    selected.sort(key=lambda x:(x.get('officialDate',''),x.get('gamePk','')),reverse=True)
-    try:season_hitters=fetch_season_stats('hitter')
-    except Exception as e:print('SEASON HITTERS unavailable:',repr(e));season_hitters={}
-    try:season_pitchers=fetch_season_stats('pitcher')
-    except Exception as e:print('SEASON PITCHERS unavailable:',repr(e));season_pitchers={}
-    successes=0
-    for g in selected[:12]:
-        pk=str(g.get('gamePk',''))
-        if len(pk)<13:continue
-        is_final=g.get('status',{}).get('abstractGameState')=='F'
-        existing=saved.get(pk,{})
-        if is_final and existing.get('source')=='KBO Game Center box score':
-            enrich_team(existing.get('kia',{}),season_hitters,season_pitchers)
-            continue
-        form={'leId':1,'srId':0,'seasonId':2026,'gameId':pk}
+        try:previous=json.loads(TARGET.read_text(encoding='utf-8'))
+        except (ValueError,OSError):pass
+    # 전날~오늘~앞으로 7일 및 지난 21일을 조회한다.
+    # 날짜는 실행 시마다 자동 변경되고 연도 하드코딩이 없다.
+    found={}
+    success_days=0
+    for shift in range(-21,8):
+        d=today+dt.timedelta(days=shift)
+        try:
+            for raw in schedule_for_day(d):
+                if not kia_game(raw):continue
+                g=readable(raw)
+                if g:found[g['gamePk']]=g
+            success_days+=1
+        except Exception as e:
+            print('SCHEDULE unavailable',d,repr(e))
+        time.sleep(0.13)
+    # 공식 일정 조회가 일부 실패하면 전에 저장한 일정도 유지한다.
+    output=ROOT/'schedule-data.json'
+    old=[]
+    if output.exists():
+        try:old=json.loads(output.read_text(encoding='utf-8'))
+        except (OSError,ValueError):pass
+    if isinstance(old,list):
+        for g in old:
+            if isinstance(g,dict) and g.get('gamePk') and g['gamePk'] not in found:
+                found[g['gamePk']]=g
+    # 지난 시즌 기록은 보존하되, 화면은 최근·다음 경기부터 출력한다.
+    ordered=sorted(found.values(), key=lambda x:(x['officialDate'],x['gamePk']),reverse=True)
+    if ordered:
+        output.write_text(json.dumps(ordered,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print('SCHEDULE fetch success days:',success_days,'KIA games:',len(ordered))
+    try:hit=fetch_season_stats('hitter')
+    except Exception as e:print('HITTER STATS error:',repr(e));hit={}
+    try:pit=fetch_season_stats('pitcher')
+    except Exception as e:print('PITCHER STATS error:',repr(e));pit={}
+    updated=0
+    today_s=today.isoformat()
+    for g in sorted(ordered,key=lambda x:x['officialDate'],reverse=True):
+        if g['officialDate'] < (today-dt.timedelta(days=9)).isoformat() or g['officialDate'] > today_s:continue
+        if g.get('cancelled'):continue
+        pk=g['gamePk'];is_final=g['status']['abstractGameState']=='F'
+        existing=previous.get(pk,{})
+        if is_final and existing.get('source')=='KBO Game Center box score':continue
+        form={'leId':1,'srId':g.get('srId',0),'seasonId':int(pk[:4]),'gameId':pk}
         kia_away=g['teams']['away']['team']['abbrev']=='KIA'
         try:
             if not is_final:
-                # Call the official lineup feed for today's game before the first pitch.
-                # The feed can contain *projected* last-game data; store confirmed only.
-                if g.get('officialDate','')!=today:continue
-                record=fetch_preview(pk,form,kia_away,today)
+                if g['officialDate']!=today_s:continue
+                record=fetch_preview(pk,form,kia_away,today_s)
                 if record:
-                    enrich_team(record['kia'],season_hitters,season_pitchers)
-                    saved[pk]=record
-                    successes+=1
-                    print('CONFIRMED LINEUP',pk,len(record['kia']['hitters']))
-                else:
-                    print('NOT YET ANNOUNCED',pk)
-            else:
-                data=get_json(BOX,form)
-                h=data.get('arrHitter',[]);p=data.get('arrPitcher',[])
-                if len(h)<2 and len(p)<2:raise ValueError('empty box score')
-                away={'hitters':hitters(h[0]) if len(h)>0 else [],'pitchers':pitchers(p[0]) if len(p)>0 else []}
-                home={'hitters':hitters(h[1]) if len(h)>1 else [],'pitchers':pitchers(p[1]) if len(p)>1 else []}
-                kia,opp=(away,home) if kia_away else (home,away)
-                if not has_content(kia):raise ValueError('no KIA player rows')
-                enrich_team(kia,season_hitters,season_pitchers)
-                saved[pk]={'kia':kia,'opponent':opp,'source':'KBO Game Center box score',
-                           'lineupStatus':'postgame','updated':today,'avgLabel':'KBO 박스스코어 표시 시즌 타율',
-                           'pitcherLabel':'해당 경기 투수 기록'}
-                successes+=1
-                print('BOX SCORE',pk,len(kia['hitters']),'batters')
-        except Exception as e:
-            print('SKIP',pk,str(e))
-        time.sleep(0.5)
-    # Don't replace verified data with an empty response. A zero-success run shouldn't fail deployment.
-    TARGET.write_text(json.dumps(saved,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    print('Updated',successes,'games. Stored',len(saved),'games.')
+                    enrich_team(record['kia'],hit,pit);previous[pk]=record;updated+=1
+                continue
+            data=get_json(BOX,form)
+            hh=data.get('arrHitter',[]);pp=data.get('arrPitcher',[])
+            if len(hh)<2 and len(pp)<2:continue
+            away={'hitters':hitters(hh[0]) if hh else [],'pitchers':pitchers(pp[0]) if pp else []}
+            home={'hitters':hitters(hh[1]) if len(hh)>1 else [],'pitchers':pitchers(pp[1]) if len(pp)>1 else []}
+            kia,opp=(away,home) if kia_away else (home,away)
+            if not has_content(kia):continue
+            enrich_team(kia,hit,pit)
+            previous[pk]={'kia':kia,'opponent':opp,'source':'KBO Game Center box score',
+                          'lineupStatus':'postgame','updated':today_s};updated+=1
+        except Exception as e:print('DETAIL unavailable',pk,repr(e))
+        time.sleep(0.2)
+    TARGET.write_text(json.dumps(previous,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print('Details updated',updated,'stored',len(previous))
 
 if __name__=='__main__':main()
