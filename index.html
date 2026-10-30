@@ -6,12 +6,32 @@
 <title>다은's 기아타이거즈</title>
 <style>
 :root{--red:#ae172b;--dark:#171a22;--paper:#fff;--muted:#727987;--bg:#f5f4f2}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--dark);font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR',sans-serif}a{text-decoration:none;color:inherit}.hero{background:linear-gradient(145deg,#8e1023,#c3233b 70%,#e24a54);color:white;padding:28px 22px 36px;border-radius:0 0 32px 32px;overflow:hidden;position:relative}.hero:after{content:'🐯';position:absolute;right:-25px;top:65px;font-size:150px;opacity:.18;transform:rotate(-13deg)}.wrap{max-width:720px;margin:auto}.eyebrow{letter-spacing:2.4px;font-size:12px;font-weight:800;opacity:.8}.hero h1{font-size:32px;letter-spacing:-1.2px;line-height:1.25;margin:13px 0}.hero p{font-size:14px;line-height:1.7;opacity:.9;max-width:290px}.pill{display:inline-flex;align-items:center;gap:7px;background:#ffffff27;border:1px solid #ffffff45;border-radius:100px;padding:8px 12px;font-size:12px;font-weight:700}.content{max-width:720px;margin:-18px auto 40px;padding:0 17px;position:relative}.card{background:var(--paper);padding:21px;border-radius:22px;box-shadow:0 5px 20px #191b2110;margin-bottom:15px}.card h2{margin:0 0 13px;font-size:20px;letter-spacing:-.6px}.muted{color:var(--muted);font-size:13px;line-height:1.65}.banner{background:#1c1e26;color:white;display:flex;justify-content:space-between;align-items:center;gap:16px}.banner .tag{background:#ffffff20;border-radius:6px;padding:5px 8px;font-size:11px}.banner strong{display:block;font-size:21px;margin:10px 0 5px}.symbol{font-size:48px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tile{display:flex;flex-direction:column;min-height:142px;align-items:flex-start;justify-content:space-between;border:1px solid #e8e6e5;border-radius:17px;padding:16px;transition:transform .2s}.tile:active{transform:scale(.98)}.tile .icon{font-size:27px}.tile b{font-size:16px}.tile span{font-size:12px;color:var(--muted)}.action{display:inline-flex;background:var(--red);color:white;padding:12px 17px;border-radius:12px;font-weight:800;font-size:14px;margin-top:8px}.line{height:1px;background:#ececec;margin:17px 0}.foot{text-align:center;color:#8a8e99;font-size:11px;line-height:1.8;margin:25px 20px}.help{font-size:12px;background:#fff3f3;padding:11px;border-radius:10px;color:#8e3543;margin:12px 0 0}
+
+.rank-lead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:4px 0 15px}.rank-lead strong{font-size:16px}.rank-badge{background:#fff0f2;color:var(--red);border-radius:30px;padding:7px 10px;font-size:12px;font-weight:800}.rank-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}.rank-table{border-collapse:collapse;width:100%;min-width:315px;font-size:13px;text-align:center}.rank-table th{color:#747b86;font-size:11px;font-weight:700;padding:11px 4px;border-bottom:1px solid #e9e9eb}.rank-table td{padding:12px 4px;border-bottom:1px solid #f0f0f1;white-space:nowrap}.rank-table th:nth-child(2),.rank-table td:nth-child(2){text-align:left;padding-left:10px}.rank-table tbody tr:last-child td{border-bottom:0}.rank-table .kia-row{background:#fff0f2;color:#971427;font-weight:800}.rank-table .kia-row td:first-child{border-radius:9px 0 0 9px}.rank-table .kia-row td:last-child{border-radius:0 9px 9px 0}.rank-note{font-size:11px;color:#7e8490;line-height:1.6;margin:12px 0 0}.rank-status{font-size:13px;color:#777;padding:20px 0;text-align:center}.rank-ref{font-size:11px;color:#a01d33;text-decoration:underline}
+
+/* 경기별 선발라인업 및 선수기록 */
+.game-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.game-head h2{margin:0}.game-list{display:grid;gap:13px}.game-box{border:1px solid #e9e7e7;border-radius:17px;overflow:hidden;background:#fff}.game-title{background:#f8f8fa;padding:15px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.game-title strong{font-size:16px}.game-title small{color:#737b89}.game-score{font-size:18px;font-weight:850}.game-content{padding:14px}.stat-head{display:flex;align-items:center;justify-content:space-between;margin:13px 0 8px}.stat-head h3{margin:0;font-size:15px}.subtle-tag{border-radius:6px;padding:4px 7px;background:#fff1f3;color:#ad2337;font-size:11px;font-weight:750}.record-table{border-collapse:collapse;width:100%;font-size:12px;text-align:center}.record-table th{background:#f6f6f8;color:#6a7080;font-size:11px;padding:10px 5px}.record-table td{border-bottom:1px solid #f0eff1;padding:10px 5px}.record-table th:nth-child(2),.record-table td:nth-child(2){text-align:left;font-weight:750}.record-table tr:last-child td{border-bottom:0}.record-table .no-data{text-align:center;padding:17px 7px;font-weight:400;line-height:1.65;color:#747987}.game-empty{font-size:13px;color:#6b7380;line-height:1.75}.sublabel{font-size:11px;color:#747987;margin-top:7px}.tiny-notice{font-size:12px;line-height:1.7;border-radius:12px;background:#fff6ed;padding:12px;color:#815427}.stats-legend{font-size:11px;line-height:1.6;color:#7c8390;margin-top:10px}.loading-dots{text-align:center;font-size:13px;padding:20px;color:#777}
 </style>
 </head>
 <body>
 <header class="hero"><div class="wrap"><div class="eyebrow">MY TIGERS FAN PAGE</div><h1>다은's<br>기아타이거즈 🐯</h1><p>오늘도 타이거즈와 함께!<br>경기 일정부터 결과, 라인업까지 한곳에서 찾아봐요.</p><span class="pill">❤️ KIA TIGERS FAN ZONE</span></div></header>
 <main class="content">
 <section class="card banner"><div><span class="tag">DAEUN'S HOME</span><strong>오늘도 V12를 향해! ⚾</strong><div style="font-size:13px;color:#e6e6e9">내 손안의 타이거즈 응원 페이지</div></div><div class="symbol">🏟️</div></section>
+<section class="card" aria-labelledby="rank-title">
+<h2 id="rank-title">🏆 2026 KBO 팀 순위</h2>
+<div class="rank-lead"><strong id="kia-ranking">KIA 순위 확인 중…</strong><span class="rank-badge">🐯 KIA 집중!</span></div>
+<div class="rank-scroll"><div id="rank-loading" class="rank-status" role="status">순위 데이터를 불러오고 있어요…</div><table class="rank-table" id="rank-table" style="display:none"><thead><tr><th>순위</th><th>구단</th><th>경기</th><th>승</th><th>패</th><th>무</th><th>승률</th></tr></thead><tbody id="rank-rows"></tbody></table></div>
+<p class="rank-note" id="rank-updated">2026 정규시즌 종료 경기 기준 · 데이터 확인 중</p>
+<p class="rank-note">비공식 집계이며 KBO 공식 순위 및 실시간 경기 상황과 차이가 있을 수 있어요. <a class="rank-ref" href="https://www.koreabaseball.com/Record/TeamRank/TeamRankDaily.aspx" target="_blank" rel="noopener">공식 순위 확인 ↗</a></p>
+</section>
+
+<section class="card" id="game-section" aria-labelledby="game-title">
+<div class="game-head"><h2 id="game-title">⚾ KIA 경기별 선발 라인업</h2><span class="rank-badge">홈에서 바로 확인</span></div>
+<p class="muted">최근 KIA 경기의 공식 박스스코어를 자동 갱신해요. 타자별 이름·타순·타율, 투수별 경기 실점·자책점·ERA를 한 화면에서 확인할 수 있어요.</p>
+<div id="kia-game-list" class="game-list" aria-live="polite"><div class="loading-dots">KIA 경기 정보를 확인하고 있어요…</div></div>
+<p class="stats-legend">타율/등판/ERA: 연결된 KBO 시즌 기록 우선 · 실점/자책: 해당 경기 박스스코어 · —: 정보 미제공</p>
+<div class="tiny-notice">📌 KBO 게임센터 박스스코어 기반으로 경기 종료 후 기록을 수집해요. 표시 타율은 해당 경기 박스스코어 값이며, 시즌 기록실 조회에 성공한 선수는 타율·등판 수·ERA를 추가로 표시해요. 좌/우타·좌/우투·OPS·선발 등판 수는 아직 확인된 데이터가 없으면 ‘—’로 표시해요. 경기 전 선발 명단은 제공되지 않을 수 있어요.</div>
+</section>
 <section class="card"><h2>⚾ 타이거즈 바로가기</h2><p class="muted">아래 메뉴를 누르면 공식 사이트의 최신 정보를 확인할 수 있어요.</p><div class="grid">
 <a class="tile" href="https://www.koreabaseball.com/Schedule/Schedule.aspx" target="_blank" rel="noopener"><div class="icon">🗓️</div><b>경기 일정</b><span>KBO 공식 일정 ↗</span></a>
 <a class="tile" href="https://www.koreabaseball.com/Schedule/Schedule.aspx" target="_blank" rel="noopener"><div class="icon">🏆</div><b>경기 결과</b><span>KBO 경기별 결과 ↗</span></a>
@@ -20,4 +40,96 @@
 </div><div class="help">안내: 현재 버전은 자동 실시간 점수 표시가 아닌 공식 정보 연결형이에요. 최신 경기 정보는 각 링크에서 확인할 수 있어요.</div></section>
 <section class="card"><h2>❤️ 다은의 응원석</h2><p class="muted">승리의 함성, 뜨거운 열정!<br>우리의 타이거즈를 언제나 응원해 🐯</p><div class="line"></div><strong style="font-size:16px">무적 KIA, 파이팅!</strong><br><a class="action" href="https://www.tigers.co.kr/" target="_blank" rel="noopener">기아타이거즈 공식 홈페이지 ↗</a></section>
 </main><footer class="foot">다은's 기아타이거즈 · 비공식 개인 팬 페이지<br>KIA 타이거즈 및 KBO와 공식 제휴 관계가 없습니다.</footer>
+<script>
+(async function(){
+ const url='https://raw.githubusercontent.com/dentearl/kbo-data/main/data/kbo/2026.json';
+ const names={KIA:'KIA',KT:'KT',LG:'LG',NC:'NC',SSG:'SSG',DOO:'두산',LOT:'롯데',SAM:'삼성',KIW:'키움',HAN:'한화'};
+ const loading=document.getElementById('rank-loading');
+ try{
+   const r=await fetch(url+'?v='+Math.floor(Date.now()/1800000),{cache:'no-store'});
+   if(!r.ok)throw new Error('데이터 요청 실패');
+   const games=await r.json(); if(!Array.isArray(games))throw new Error('자료 형식 오류');
+   const standings=Object.fromEntries(Object.keys(names).map(t=>[t,{code:t,w:0,l:0,d:0}]));
+   let last='';
+   for(const g of games){
+     if(g.isPostseason || (g.status?.abstractGameState!=='F' && g.status?.detailedState!=='Final'))continue;
+     const a=g.teams?.away, h=g.teams?.home;
+     const ac=a?.team?.abbrev, hc=h?.team?.abbrev;
+     if(!standings[ac]||!standings[hc]||!Number.isFinite(Number(a.score))||!Number.isFinite(Number(h.score))||a.score==null||h.score==null)continue;
+     if(g.isTie || Number(a.score)===Number(h.score)){standings[ac].d++;standings[hc].d++}
+     else if(Number(a.score)>Number(h.score)){standings[ac].w++;standings[hc].l++}
+     else {standings[hc].w++;standings[ac].l++}
+     if(g.officialDate && g.officialDate>last)last=g.officialDate;
+   }
+   const rows=Object.values(standings);
+   if(!rows.some(t=>t.w+t.l+t.d))throw new Error('완료된 경기 없음');
+   const pct=t=>(t.w+t.l)?t.w/(t.w+t.l):0;
+   rows.sort((a,b)=>pct(b)-pct(a)||b.w-a.w||a.l-b.l||a.code.localeCompare(b.code));
+   const tbody=document.getElementById('rank-rows');
+   rows.forEach((t,i)=>{
+     const tr=document.createElement('tr');if(t.code==='KIA')tr.className='kia-row';
+     [String(i+1),names[t.code],String(t.w+t.l+t.d),String(t.w),String(t.l),String(t.d),pct(t).toFixed(3).replace(/^0/, '')].forEach(v=>{let td=document.createElement('td');td.textContent=v;tr.appendChild(td)});
+     tbody.appendChild(tr);
+   });
+   document.getElementById('kia-ranking').textContent='KIA 현재 '+(rows.findIndex(t=>t.code==='KIA')+1)+'위';
+   document.getElementById('rank-updated').textContent='2026 정규시즌 완료 경기 기준 · 최근 반영 경기: '+(last||'확인 불가')+' · 접속 시 새로 조회';
+   loading.style.display='none';document.getElementById('rank-table').style.display='table';
+ }catch(e){
+   loading.textContent='순위 데이터를 불러오지 못했어요. 인터넷 연결 후 새로고침해 주세요.';
+   document.getElementById('kia-ranking').textContent='KIA 순위 확인 불가';
+   document.getElementById('rank-updated').textContent='데이터가 제공되지 않아 순위를 표시할 수 없어요.';
+ }
+})();
+</script>
+<script>
+/* 경기별 상세화면: 날짜/상대/점수는 공개 경기 데이터, 선수 상세는 별도의 lineup-data.json이 있을 때 표시 */
+(async function(){
+  const wrap=document.getElementById('kia-game-list');
+  const scheduleUrl='https://raw.githubusercontent.com/dentearl/kbo-data/main/data/kbo/2026.json';
+  let details={};
+  try {const r=await fetch('./lineup-data.json?t='+Math.floor(Date.now()/300000),{cache:'no-store'});if(r.ok){const j=await r.json();if(j&&typeof j==='object'&&!Array.isArray(j))details=j;}}catch(e){}
+  const str=v=>String(v??'');
+  const safe=v=>str(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const value=(x,alternative='—')=>x===undefined||x===null||x===''?alternative:safe(x);
+  const pct=x=>x===undefined||x===null||x===''?'—':(isNaN(Number(x))?safe(x):Number(x).toFixed(3).replace(/^0\./,'.'));
+  const id=t=>String(t||'').toUpperCase().replace(/[^A-Z가-힣]/g,'');
+  const isKia=t=>['KIA','기아','기아타이거즈'].includes(id(t));
+  function hitters(players){
+   if(!Array.isArray(players)||!players.length)return '<tr><td class="no-data" colspan="6">아직 확정 선발 라인업이 발표되지 않았거나 자료 갱신 전이에요.</td></tr>';
+   return players.map((p,i)=>'<tr><td>'+value(p.order,i+1)+'</td><td>'+value(p.name)+'</td><td>'+value(p.position)+'</td><td>'+value(p.bats)+'</td><td>'+pct(p.avg)+'</td><td>'+value(p.ops)+'</td></tr>').join('');
+  }
+  function pitchers(players){
+   if(!Array.isArray(players)||!players.length)return '<tr><td class="no-data" colspan="7">선발 투수 명단과 시즌 기록이 아직 제공되지 않았어요.</td></tr>';
+   return players.map(p=>'<tr><td>'+value(p.name)+'</td><td>'+value(p.throws)+'</td><td>'+value(p.games)+'</td><td>'+value(p.starts)+'</td><td>'+value(p.runs)+'</td><td>'+value(p.earnedRuns)+'</td><td>'+value(p.seasonEra||p.era)+'</td></tr>').join('');
+  }
+  function table(team){
+    const t=team||{};
+    return '<div class="stat-head"><h3>🥎 선발 타자</h3><span class="subtle-tag">1~9번</span></div><div class="rank-scroll"><table class="record-table"><thead><tr><th>타순</th><th>선수</th><th>수비</th><th>좌/우타</th><th>타율</th><th>OPS</th></tr></thead><tbody>'+hitters(t.hitters)+'</tbody></table></div>'+
+    '<div class="stat-head"><h3>⚾ 투수 기록</h3><span class="subtle-tag">시즌·경기 기록</span></div><div class="rank-scroll"><table class="record-table"><thead><tr><th>선수</th><th>좌/우투</th><th>시즌 등판</th><th>선발 수</th><th>경기 실점</th><th>경기 자책</th><th>ERA</th></tr></thead><tbody>'+pitchers(t.pitchers)+'</tbody></table></div>';
+  }
+  function gameKey(g){return g.gamePk??g.gameId??g.id??g.pk??g.officialDate??g.gameDate?.slice(0,10)??'';}
+  try{
+    const r=await fetch(scheduleUrl+'?t='+Math.floor(Date.now()/1800000),{cache:'no-store'});if(!r.ok)throw Error('응답 오류');
+    const games=await r.json();if(!Array.isArray(games))throw Error('경기 목록 형식 오류');
+    const rows=games.filter(g=>{const a=g.teams?.away?.team||{},h=g.teams?.home?.team||{};return isKia(a.abbrev||a.name)||isKia(h.abbrev||h.name);})
+     .filter(g=>String(g.officialDate||g.gameDate||'').slice(0,10)<=new Date(Date.now()+9*3600000).toISOString().slice(0,10))
+     .sort((a,b)=>String(b.officialDate||b.gameDate||'').localeCompare(String(a.officialDate||a.gameDate||'')))
+     .slice(0,5);
+    if(!rows.length){wrap.innerHTML='<p class="game-empty">표시할 KIA 경기 정보가 없어요. 데이터 업데이트를 확인해 주세요.</p>';return;}
+    wrap.innerHTML=rows.map(g=>{
+      const a=g.teams?.away??{},h=g.teams?.home??{};
+      const away=a.team?.name||a.team?.abbrev||'원정팀',home=h.team?.name||h.team?.abbrev||'홈팀';
+      const dt=String(g.officialDate||g.gameDate||'').slice(0,10);
+      const score=a.score!=null&&h.score!=null?`${a.score} : ${h.score}`:'경기 전 / 기록 미제공';
+      const k=isKia(a.team?.abbrev||a.team?.name)?'away':'home';
+      const key=String(gameKey(g));
+      const d=details[key]||{};
+      const lineupNote=d.lineupStatus==='confirmed'?'✅ 당일 확정 선발 라인업':d.lineupStatus==='postgame'?'📊 경기 종료 기록':'⏳ 선발 라인업 발표 전 · 아직 자료 없음';
+      const kia=d.kia||d[k]||{};
+      const opp=d.opponent||d[k==='home'?'away':'home']||{};
+      return '<article class="game-box"><div class="game-title"><div><small>'+safe(dt)+' · '+safe(g.status?.detailedState||'경기 기록')+'</small><br><strong>'+safe(away)+' vs '+safe(home)+'</strong></div><div class="game-score">'+safe(score)+'</div></div><div class="game-content"><div class="stat-head"><h3>🐯 KIA 타이거즈</h3><span class="subtle-tag">경기별 기록</span></div>'+table(kia)+'<div class="stat-head"><h3>🆚 상대팀 기록</h3></div>'+table(opp)+'</div></article>';
+    }).join('');
+  }catch(e){wrap.innerHTML='<p class="game-empty">현재 경기 데이터를 불러오지 못했어요. 네트워크 연결을 확인하거나 다시 접속해 주세요.</p>';}
+})();
+</script>
 </body></html>
