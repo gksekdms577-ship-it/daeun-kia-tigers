@@ -3806,5 +3806,913 @@
     "updated": "2026-10-30",
     "avgLabel": "KBO 박스스코어 표시 시즌 타율",
     "pitcherLabel": "해당 경기 투수 기록"
+  },
+  "20261029SSHT0": {
+    "kia": {
+      "hitters": [
+        {
+          "order": "1",
+          "position": "좌",
+          "name": "박재현",
+          "avg": "0.293",
+          "games": "132",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "2",
+          "position": "중",
+          "name": "김호령",
+          "avg": "0.267",
+          "games": "141",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "2",
+          "position": "타",
+          "name": "한준수",
+          "avg": "0.281",
+          "games": "115",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "2",
+          "position": "주",
+          "name": "정현창",
+          "avg": "0.150",
+          "games": "123",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "3",
+          "position": "三",
+          "name": "김도영",
+          "avg": "0.308",
+          "games": "135",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "4",
+          "position": "一",
+          "name": "카스트로",
+          "avg": "0.327",
+          "games": "99",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "5",
+          "position": "우",
+          "name": "나성범",
+          "avg": "0.303",
+          "games": "140",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "6",
+          "position": "지",
+          "name": "김선빈",
+          "avg": "0.285",
+          "games": "137",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "6",
+          "position": "주",
+          "name": "김민규",
+          "avg": "0.265",
+          "games": "74",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "7",
+          "position": "二",
+          "name": "김규성",
+          "avg": "0.229",
+          "games": "105",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "7",
+          "position": "타",
+          "name": "이호연",
+          "avg": "0.234",
+          "games": "34",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "7",
+          "position": "二",
+          "name": "박민",
+          "avg": "0.192",
+          "games": "91",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "8",
+          "position": "포",
+          "name": "김태군",
+          "avg": "0.252",
+          "games": "88",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "8",
+          "position": "타",
+          "name": "박정우",
+          "avg": "0.292",
+          "games": "110",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "9",
+          "position": "유",
+          "name": "하주석",
+          "avg": "0.249",
+          "games": "71",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        }
+      ],
+      "pitchers": [
+        {
+          "name": "시라카와",
+          "runs": "4",
+          "earnedRuns": "4",
+          "era": "8.31",
+          "innings": "4 1/3",
+          "entry": "선발",
+          "games": "18",
+          "seasonEra": "4.75",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "정해영",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "1/3",
+          "entry": "5.1",
+          "games": "55",
+          "seasonEra": "6.12",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "곽도규",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "2/3",
+          "entry": "5.3",
+          "games": "44",
+          "seasonEra": "2.81",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "이태양",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "-",
+          "innings": "0",
+          "entry": "6.6",
+          "games": "33",
+          "seasonEra": "2.55",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "조상우",
+          "runs": "2",
+          "earnedRuns": "2",
+          "era": "13.50",
+          "innings": "1 1/3",
+          "entry": "6.7",
+          "games": "72",
+          "seasonEra": "3.29",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "이의리",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "1/3",
+          "entry": "7.3",
+          "games": "39",
+          "seasonEra": "6.68",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "성영탁",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "1/3",
+          "entry": "8.5",
+          "games": "60",
+          "seasonEra": "3.47",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "김범수",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "-",
+          "innings": "0",
+          "entry": "8.8",
+          "games": "60",
+          "seasonEra": "5.63",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "전상현",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "1 2/3",
+          "entry": "8.9",
+          "games": "46",
+          "seasonEra": "2.33",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        }
+      ]
+    },
+    "opponent": {
+      "hitters": [
+        {
+          "order": "1",
+          "position": "중",
+          "name": "김지찬",
+          "avg": "0.231"
+        },
+        {
+          "order": "2",
+          "position": "우",
+          "name": "박승규",
+          "avg": "0.300"
+        },
+        {
+          "order": "3",
+          "position": "지",
+          "name": "구자욱",
+          "avg": "0.154"
+        },
+        {
+          "order": "4",
+          "position": "一",
+          "name": "디아즈",
+          "avg": "0.300"
+        },
+        {
+          "order": "5",
+          "position": "좌",
+          "name": "최형우",
+          "avg": "0.333"
+        },
+        {
+          "order": "5",
+          "position": "좌",
+          "name": "김헌곤",
+          "avg": "0.500"
+        },
+        {
+          "order": "6",
+          "position": "포",
+          "name": "강민호",
+          "avg": "0.111"
+        },
+        {
+          "order": "7",
+          "position": "三",
+          "name": "전병우",
+          "avg": "0.000"
+        },
+        {
+          "order": "7",
+          "position": "타三",
+          "name": "김영웅",
+          "avg": "0.143"
+        },
+        {
+          "order": "8",
+          "position": "二",
+          "name": "류지혁",
+          "avg": "0.375"
+        },
+        {
+          "order": "9",
+          "position": "유",
+          "name": "이재현",
+          "avg": "0.250"
+        }
+      ],
+      "pitchers": [
+        {
+          "name": "최원태",
+          "runs": "2",
+          "earnedRuns": "2",
+          "era": "10.80",
+          "innings": "1 2/3",
+          "entry": "선발"
+        },
+        {
+          "name": "배찬승",
+          "runs": "1",
+          "earnedRuns": "1",
+          "era": "6.75",
+          "innings": "1 1/3",
+          "entry": "2.1"
+        },
+        {
+          "name": "이재희",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "2",
+          "entry": "4.7"
+        },
+        {
+          "name": "원태인",
+          "runs": "1",
+          "earnedRuns": "1",
+          "era": "5.40",
+          "innings": "1 2/3",
+          "entry": "6.5"
+        },
+        {
+          "name": "이승민",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "1 1/3",
+          "entry": "7.3"
+        },
+        {
+          "name": "김태훈",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "2/3",
+          "entry": "9.8"
+        },
+        {
+          "name": "사토시",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "1/3",
+          "entry": "9.3"
+        }
+      ]
+    },
+    "source": "KBO Game Center box score",
+    "lineupStatus": "postgame",
+    "updated": "2026-10-30"
+  },
+  "20261027HTSS0": {
+    "kia": {
+      "hitters": [
+        {
+          "order": "1",
+          "position": "좌",
+          "name": "박재현",
+          "avg": "0.293",
+          "games": "132",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "2",
+          "position": "지",
+          "name": "이호연",
+          "avg": "0.234",
+          "games": "34",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "2",
+          "position": "타",
+          "name": "김태군",
+          "avg": "0.252",
+          "games": "88",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "3",
+          "position": "三",
+          "name": "김도영",
+          "avg": "0.308",
+          "games": "135",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "4",
+          "position": "一",
+          "name": "카스트로",
+          "avg": "0.327",
+          "games": "99",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "5",
+          "position": "우",
+          "name": "나성범",
+          "avg": "0.303",
+          "games": "140",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "6",
+          "position": "二",
+          "name": "김선빈",
+          "avg": "0.285",
+          "games": "137",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "7",
+          "position": "포",
+          "name": "한준수",
+          "avg": "0.281",
+          "games": "115",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "8",
+          "position": "유",
+          "name": "하주석",
+          "avg": "0.249",
+          "games": "71",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "9",
+          "position": "중",
+          "name": "김호령",
+          "avg": "0.267",
+          "games": "141",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        }
+      ],
+      "pitchers": [
+        {
+          "name": "올러",
+          "runs": "5",
+          "earnedRuns": "5",
+          "era": "9.64",
+          "innings": "4 2/3",
+          "entry": "선발",
+          "games": "30",
+          "seasonEra": "3.13",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "이의리",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "-",
+          "innings": "0",
+          "entry": "5.3",
+          "games": "39",
+          "seasonEra": "6.68",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "성영탁",
+          "runs": "2",
+          "earnedRuns": "2",
+          "era": "18.00",
+          "innings": "1",
+          "entry": "5.6",
+          "games": "60",
+          "seasonEra": "3.47",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "김범수",
+          "runs": "1",
+          "earnedRuns": "1",
+          "era": "13.50",
+          "innings": "2/3",
+          "entry": "6.3",
+          "games": "60",
+          "seasonEra": "5.63",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "정해영",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "2/3",
+          "entry": "7.6",
+          "games": "55",
+          "seasonEra": "6.12",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "이태양",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "1",
+          "entry": "8.9",
+          "games": "33",
+          "seasonEra": "2.55",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        }
+      ]
+    },
+    "opponent": {
+      "hitters": [
+        {
+          "order": "1",
+          "position": "중",
+          "name": "김지찬",
+          "avg": "0.222"
+        },
+        {
+          "order": "2",
+          "position": "우",
+          "name": "박승규",
+          "avg": "0.400"
+        },
+        {
+          "order": "3",
+          "position": "지",
+          "name": "구자욱",
+          "avg": "0.125"
+        },
+        {
+          "order": "4",
+          "position": "一",
+          "name": "디아즈",
+          "avg": "0.167"
+        },
+        {
+          "order": "5",
+          "position": "좌",
+          "name": "최형우",
+          "avg": "0.667"
+        },
+        {
+          "order": "5",
+          "position": "좌",
+          "name": "김헌곤",
+          "avg": "0.000"
+        },
+        {
+          "order": "6",
+          "position": "三",
+          "name": "김영웅",
+          "avg": "0.167"
+        },
+        {
+          "order": "6",
+          "position": "타三",
+          "name": "전병우",
+          "avg": "0.000"
+        },
+        {
+          "order": "7",
+          "position": "포",
+          "name": "강민호",
+          "avg": "0.000"
+        },
+        {
+          "order": "8",
+          "position": "二",
+          "name": "류지혁",
+          "avg": "0.200"
+        },
+        {
+          "order": "9",
+          "position": "유",
+          "name": "이재현",
+          "avg": "0.200"
+        }
+      ],
+      "pitchers": [
+        {
+          "name": "후라도",
+          "runs": "2",
+          "earnedRuns": "2",
+          "era": "2.70",
+          "innings": "6 2/3",
+          "entry": "선발"
+        },
+        {
+          "name": "이승민",
+          "runs": "1",
+          "earnedRuns": "1",
+          "era": "6.75",
+          "innings": "1 1/3",
+          "entry": "7.1"
+        },
+        {
+          "name": "원태인",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "1",
+          "entry": "9.6"
+        }
+      ]
+    },
+    "source": "KBO Game Center box score",
+    "lineupStatus": "postgame",
+    "updated": "2026-10-30"
+  },
+  "20261026HTSS0": {
+    "kia": {
+      "hitters": [
+        {
+          "order": "1",
+          "position": "중우",
+          "name": "박정우",
+          "avg": "0.292",
+          "games": "110",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "2",
+          "position": "좌",
+          "name": "박재현",
+          "avg": "0.293",
+          "games": "132",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "3",
+          "position": "三",
+          "name": "김도영",
+          "avg": "0.308",
+          "games": "135",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "4",
+          "position": "一",
+          "name": "카스트로",
+          "avg": "0.327",
+          "games": "99",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "5",
+          "position": "우",
+          "name": "나성범",
+          "avg": "0.303",
+          "games": "140",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "5",
+          "position": "중",
+          "name": "김호령",
+          "avg": "0.267",
+          "games": "141",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "6",
+          "position": "二",
+          "name": "김선빈",
+          "avg": "0.285",
+          "games": "137",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "6",
+          "position": "주二",
+          "name": "김규성",
+          "avg": "0.229",
+          "games": "105",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "7",
+          "position": "지",
+          "name": "한준수",
+          "avg": "0.281",
+          "games": "115",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "8",
+          "position": "포",
+          "name": "김태군",
+          "avg": "0.252",
+          "games": "88",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "9",
+          "position": "유",
+          "name": "하주석",
+          "avg": "0.249",
+          "games": "71",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "order": "9",
+          "position": "유",
+          "name": "박민",
+          "avg": "0.192",
+          "games": "91",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        }
+      ],
+      "pitchers": [
+        {
+          "name": "네일",
+          "runs": "1",
+          "earnedRuns": "1",
+          "era": "2.08",
+          "innings": "4 1/3",
+          "entry": "선발",
+          "games": "31",
+          "seasonEra": "3.49",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "정해영",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "2/3",
+          "entry": "5.6",
+          "games": "55",
+          "seasonEra": "6.12",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "이의리",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "1 1/3",
+          "entry": "6.9",
+          "games": "39",
+          "seasonEra": "6.68",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "조상우",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "1 1/3",
+          "entry": "7.5",
+          "games": "72",
+          "seasonEra": "3.29",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "곽도규",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "1/3",
+          "entry": "8.9",
+          "games": "44",
+          "seasonEra": "2.81",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        },
+        {
+          "name": "전상현",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "1",
+          "entry": "9.1",
+          "games": "46",
+          "seasonEra": "2.33",
+          "seasonStatsSource": "KBO 공식 시즌 기록"
+        }
+      ]
+    },
+    "opponent": {
+      "hitters": [
+        {
+          "order": "1",
+          "position": "중",
+          "name": "김지찬",
+          "avg": "0.250"
+        },
+        {
+          "order": "2",
+          "position": "우",
+          "name": "김성윤",
+          "avg": "0.000"
+        },
+        {
+          "order": "3",
+          "position": "지",
+          "name": "구자욱",
+          "avg": "0.000"
+        },
+        {
+          "order": "4",
+          "position": "一",
+          "name": "디아즈",
+          "avg": "0.000"
+        },
+        {
+          "order": "5",
+          "position": "좌",
+          "name": "박승규",
+          "avg": "0.000"
+        },
+        {
+          "order": "6",
+          "position": "포",
+          "name": "강민호",
+          "avg": "0.000"
+        },
+        {
+          "order": "7",
+          "position": "三",
+          "name": "김영웅",
+          "avg": "0.333"
+        },
+        {
+          "order": "8",
+          "position": "유",
+          "name": "이재현",
+          "avg": "0.000"
+        },
+        {
+          "order": "8",
+          "position": "타",
+          "name": "김현준",
+          "avg": "0.000"
+        },
+        {
+          "order": "8",
+          "position": "유",
+          "name": "박계범",
+          "avg": "0.000"
+        },
+        {
+          "order": "9",
+          "position": "二",
+          "name": "류지혁",
+          "avg": "0.000"
+        },
+        {
+          "order": "9",
+          "position": "타",
+          "name": "김도환",
+          "avg": "0.000"
+        },
+        {
+          "order": "9",
+          "position": "二",
+          "name": "김상준",
+          "avg": "0.000"
+        }
+      ],
+      "pitchers": [
+        {
+          "name": "페덱",
+          "runs": "5",
+          "earnedRuns": "5",
+          "era": "9.64",
+          "innings": "4 2/3",
+          "entry": "선발"
+        },
+        {
+          "name": "배찬승",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "1 1/3",
+          "entry": "5.4"
+        },
+        {
+          "name": "김태훈",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "1",
+          "entry": "7.9"
+        },
+        {
+          "name": "이승민",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "1",
+          "entry": "8.3"
+        },
+        {
+          "name": "사토시",
+          "runs": "0",
+          "earnedRuns": "0",
+          "era": "0.00",
+          "innings": "1",
+          "entry": "9.8"
+        }
+      ]
+    },
+    "source": "KBO Game Center box score",
+    "lineupStatus": "postgame",
+    "updated": "2026-10-30"
   }
 }

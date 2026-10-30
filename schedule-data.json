@@ -1,1 +1,405 @@
-[]
+[
+  {
+    "gamePk": "20261101HTSS0",
+    "officialDate": "2026-11-01",
+    "teams": {
+      "away": {
+        "team": {
+          "abbrev": "KIA",
+          "name": "KIA 타이거즈"
+        },
+        "score": 0
+      },
+      "home": {
+        "team": {
+          "abbrev": "SS",
+          "name": "삼성"
+        },
+        "score": 0
+      }
+    },
+    "status": {
+      "abstractGameState": "P",
+      "detailedState": "정상경기"
+    },
+    "series": "",
+    "srId": 5,
+    "time": "14:00",
+    "venue": "대구",
+    "cancelled": false,
+    "awayStarter": "",
+    "homeStarter": ""
+  },
+  {
+    "gamePk": "20261030SSHT0",
+    "officialDate": "2026-10-30",
+    "teams": {
+      "away": {
+        "team": {
+          "abbrev": "SS",
+          "name": "삼성"
+        },
+        "score": 2
+      },
+      "home": {
+        "team": {
+          "abbrev": "KIA",
+          "name": "KIA 타이거즈"
+        },
+        "score": 1
+      }
+    },
+    "status": {
+      "abstractGameState": "P",
+      "detailedState": "정상경기"
+    },
+    "series": "",
+    "srId": 5,
+    "time": "18:30",
+    "venue": "광주",
+    "cancelled": false,
+    "awayStarter": "페덱 ",
+    "homeStarter": "네일 "
+  },
+  {
+    "gamePk": "20261029SSHT0",
+    "officialDate": "2026-10-29",
+    "teams": {
+      "away": {
+        "team": {
+          "abbrev": "SS",
+          "name": "삼성"
+        },
+        "score": 6
+      },
+      "home": {
+        "team": {
+          "abbrev": "KIA",
+          "name": "KIA 타이거즈"
+        },
+        "score": 4
+      }
+    },
+    "status": {
+      "abstractGameState": "F",
+      "detailedState": "정상경기"
+    },
+    "series": "",
+    "srId": 5,
+    "time": "18:30",
+    "venue": "광주",
+    "cancelled": false,
+    "awayStarter": "최원태 ",
+    "homeStarter": "시라카와 "
+  },
+  {
+    "gamePk": "20261027HTSS0",
+    "officialDate": "2026-10-27",
+    "teams": {
+      "away": {
+        "team": {
+          "abbrev": "KIA",
+          "name": "KIA 타이거즈"
+        },
+        "score": 3
+      },
+      "home": {
+        "team": {
+          "abbrev": "SS",
+          "name": "삼성"
+        },
+        "score": 8
+      }
+    },
+    "status": {
+      "abstractGameState": "F",
+      "detailedState": "정상경기"
+    },
+    "series": "",
+    "srId": 5,
+    "time": "18:30",
+    "venue": "대구",
+    "cancelled": false,
+    "awayStarter": "올러 ",
+    "homeStarter": "후라도 "
+  },
+  {
+    "gamePk": "20261026HTSS0",
+    "officialDate": "2026-10-26",
+    "teams": {
+      "away": {
+        "team": {
+          "abbrev": "KIA",
+          "name": "KIA 타이거즈"
+        },
+        "score": 5
+      },
+      "home": {
+        "team": {
+          "abbrev": "SS",
+          "name": "삼성"
+        },
+        "score": 1
+      }
+    },
+    "status": {
+      "abstractGameState": "F",
+      "detailedState": "정상경기"
+    },
+    "series": "",
+    "srId": 5,
+    "time": "18:30",
+    "venue": "대구",
+    "cancelled": false,
+    "awayStarter": "네일 ",
+    "homeStarter": "페덱 "
+  },
+  {
+    "gamePk": "20261025HTSS0",
+    "officialDate": "2026-10-25",
+    "teams": {
+      "away": {
+        "team": {
+          "abbrev": "KIA",
+          "name": "KIA 타이거즈"
+        },
+        "score": 0
+      },
+      "home": {
+        "team": {
+          "abbrev": "SS",
+          "name": "삼성"
+        },
+        "score": 0
+      }
+    },
+    "status": {
+      "abstractGameState": "P",
+      "detailedState": "우천취소"
+    },
+    "series": "",
+    "srId": 5,
+    "time": "14:00",
+    "venue": "대구",
+    "cancelled": true,
+    "awayStarter": "네일 ",
+    "homeStarter": "페덱 "
+  },
+  {
+    "gamePk": "20261020HTLG0",
+    "officialDate": "2026-10-20",
+    "teams": {
+      "away": {
+        "team": {
+          "abbrev": "KIA",
+          "name": "KIA 타이거즈"
+        },
+        "score": 13
+      },
+      "home": {
+        "team": {
+          "abbrev": "LG",
+          "name": "LG"
+        },
+        "score": 1
+      }
+    },
+    "status": {
+      "abstractGameState": "F",
+      "detailedState": "정상경기"
+    },
+    "series": "",
+    "srId": 3,
+    "time": "18:30",
+    "venue": "잠실",
+    "cancelled": false,
+    "awayStarter": "시라카와 ",
+    "homeStarter": "카라스코 "
+  },
+  {
+    "gamePk": "20261018LGHT0",
+    "officialDate": "2026-10-18",
+    "teams": {
+      "away": {
+        "team": {
+          "abbrev": "LG",
+          "name": "LG"
+        },
+        "score": 3
+      },
+      "home": {
+        "team": {
+          "abbrev": "KIA",
+          "name": "KIA 타이거즈"
+        },
+        "score": 6
+      }
+    },
+    "status": {
+      "abstractGameState": "F",
+      "detailedState": "정상경기"
+    },
+    "series": "",
+    "srId": 3,
+    "time": "14:00",
+    "venue": "광주",
+    "cancelled": false,
+    "awayStarter": "임찬규 ",
+    "homeStarter": "올러 "
+  },
+  {
+    "gamePk": "20261017LGHT0",
+    "officialDate": "2026-10-17",
+    "teams": {
+      "away": {
+        "team": {
+          "abbrev": "LG",
+          "name": "LG"
+        },
+        "score": 1
+      },
+      "home": {
+        "team": {
+          "abbrev": "KIA",
+          "name": "KIA 타이거즈"
+        },
+        "score": 5
+      }
+    },
+    "status": {
+      "abstractGameState": "F",
+      "detailedState": "정상경기"
+    },
+    "series": "",
+    "srId": 3,
+    "time": "14:00",
+    "venue": "광주",
+    "cancelled": false,
+    "awayStarter": "톨허스트 ",
+    "homeStarter": "네일 "
+  },
+  {
+    "gamePk": "20261012LGHT0",
+    "officialDate": "2026-10-12",
+    "teams": {
+      "away": {
+        "team": {
+          "abbrev": "LG",
+          "name": "LG"
+        },
+        "score": 2
+      },
+      "home": {
+        "team": {
+          "abbrev": "KIA",
+          "name": "KIA 타이거즈"
+        },
+        "score": 4
+      }
+    },
+    "status": {
+      "abstractGameState": "F",
+      "detailedState": "정상경기"
+    },
+    "series": "",
+    "srId": 0,
+    "time": "18:30",
+    "venue": "광주",
+    "cancelled": false,
+    "awayStarter": "임찬규 ",
+    "homeStarter": "양현종 "
+  },
+  {
+    "gamePk": "20261011LTHT0",
+    "officialDate": "2026-10-11",
+    "teams": {
+      "away": {
+        "team": {
+          "abbrev": "LT",
+          "name": "롯데"
+        },
+        "score": 4
+      },
+      "home": {
+        "team": {
+          "abbrev": "KIA",
+          "name": "KIA 타이거즈"
+        },
+        "score": 1
+      }
+    },
+    "status": {
+      "abstractGameState": "F",
+      "detailedState": "정상경기"
+    },
+    "series": "",
+    "srId": 0,
+    "time": "14:00",
+    "venue": "광주",
+    "cancelled": false,
+    "awayStarter": "김진욱 ",
+    "homeStarter": "올러 "
+  },
+  {
+    "gamePk": "20261010SKHT0",
+    "officialDate": "2026-10-10",
+    "teams": {
+      "away": {
+        "team": {
+          "abbrev": "SK",
+          "name": "SSG"
+        },
+        "score": 5
+      },
+      "home": {
+        "team": {
+          "abbrev": "KIA",
+          "name": "KIA 타이거즈"
+        },
+        "score": 8
+      }
+    },
+    "status": {
+      "abstractGameState": "F",
+      "detailedState": "정상경기"
+    },
+    "series": "",
+    "srId": 0,
+    "time": "17:00",
+    "venue": "광주",
+    "cancelled": false,
+    "awayStarter": "최민준 ",
+    "homeStarter": "시라카와 "
+  },
+  {
+    "gamePk": "20261009HTNC0",
+    "officialDate": "2026-10-09",
+    "teams": {
+      "away": {
+        "team": {
+          "abbrev": "KIA",
+          "name": "KIA 타이거즈"
+        },
+        "score": 7
+      },
+      "home": {
+        "team": {
+          "abbrev": "NC",
+          "name": "NC"
+        },
+        "score": 2
+      }
+    },
+    "status": {
+      "abstractGameState": "F",
+      "detailedState": "정상경기"
+    },
+    "series": "",
+    "srId": 0,
+    "time": "14:00",
+    "venue": "창원",
+    "cancelled": false,
+    "awayStarter": "네일 ",
+    "homeStarter": "구창모 "
+  }
+]
