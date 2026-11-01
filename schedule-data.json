@@ -15,11 +15,11 @@
           "abbrev": "SS",
           "name": "삼성"
         },
-        "score": 4
+        "score": 6
       }
     },
     "status": {
-      "abstractGameState": "P",
+      "abstractGameState": "F",
       "detailedState": "정상경기"
     },
     "series": "",
